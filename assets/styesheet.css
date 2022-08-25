@@ -1,0 +1,159 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --periwinkle: #cdd0eb;
+    --grape: #331355;
+    --east-side: #c17ecf;
+}
+
+
+h2,
+h3,
+h4,
+h5 {
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+img {
+    max-height: 200px;
+    max-width: 200px;
+    float: left;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+
+.background {
+    background: linear-gradient(rgb(203, 191, 226), rgb(166, 178, 209), rgb(128, 166, 191), rgb(86, 152, 175), rgb(16, 139, 158));
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: var(--periwinkle);
+    color: var(--grape);
+    border: 2px solid rgb(16, 139, 158);
+    border-radius: 5px;
+}
+
+.header h1 {
+    padding: 10px;
+    float: left;
+}
+
+.header ul {
+    display: block;
+    list-style-type: none;
+}
+
+.navigation li {
+    float: right;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+.navigation li a {
+    display: block;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: underline;
+}
+
+.container1 {
+    margin-left: 10px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.container1 h2 {
+    align-self: stretch;
+}
+
+.container1 p {
+    line-height: 1.6;
+}
+
+.container2 {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.container2 ul {
+    list-style: none;
+}
+
+
+.container2 h3,
+h4,
+h5 {
+    align-self: stretch;
+}
+
+
+.project img {
+    opacity: 0.7;
+}
+
+.project:hover img {
+    opacity: 100%;
+    transition: opacity 0.5s;
+}
+
+#first-project {
+    max-height: 500px;
+    max-width: 500px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#project-title {
+    position: relative;
+    margin: -1rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--grape);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#other-project {
+    max-height: 25%;
+    max-width: 25%;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#project-title2 {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--grape);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#contact {
+    float: left;
+    margin: 1.5rem;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container1 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }  
+
+    .container2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }  
+    }
