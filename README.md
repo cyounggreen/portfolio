@@ -10,4 +10,4 @@ Screenshot can be found in (./assets/images/screenshot.jpg).
 
 ## Link
 
-The deployed page can be found here: 
+The deployed page can be found here: https://cyounggreen.github.io/portfolio/
