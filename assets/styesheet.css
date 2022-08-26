@@ -25,12 +25,14 @@ img {
     border-radius: 8px;
 }
 
-
+/*background gradient was used from Khroma.co/generator, the background attachement keeps the gradient from repeating.*/
 .background {
     background: linear-gradient(rgb(203, 191, 226), rgb(166, 178, 209), rgb(128, 166, 191), rgb(86, 152, 175), rgb(16, 139, 158));
+    background-attachment: fixed;
     height: 100vh;
 }
 
+/*the justify content space between is so the links to the side have space*/
 .header {
     display: flex;
     justify-content: space-between;
@@ -64,6 +66,7 @@ img {
     text-decoration: underline;
 }
 
+/*because container1 has the img by it, two separate containers were made to keep the margins consistent*/
 .container1 {
     margin-left: 10px;
     padding: 5px;
@@ -80,12 +83,16 @@ img {
     line-height: 1.6;
 }
 
+/*I do not completely understand what I did here. However, the align items is needed so that the image descriptions appear on top of the image.*/
 .container2 {
     margin: 10px;
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container2 ul {
@@ -99,53 +106,88 @@ h5 {
     align-self: stretch;
 }
 
-
-.project img {
-    opacity: 0.7;
+/*there is a better way to go about this i'm sure, but again, this was to ensure the items laid on top of each other*/
+.project1 {
+flex: 0 1 100%;
+width: 100%;
+flex-wrap: wrap;
+flex-direction: row;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.project:hover img {
+.project1 img {
+    opacity: 0.7;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.project1:hover img {
     opacity: 100%;
     transition: opacity 0.5s;
 }
 
+.project2 {
+    flex: 0 1 50%;
+    width: 50%; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+}
+
+.project2 img {
+    opacity: 0.7;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.project2:hover img {
+    opacity: 100%;
+    transition: opacity 0.5s;
+}
+
+/*Using the flex command was not working, so instead, this box gets to be it's full height, while the others are only at 30%*/
 #first-project {
-    max-height: 500px;
-    max-width: 500px;
+    max-height: 100%;
+    max-width: 100%;
     padding: 5px;
     border-radius: 8px;
 }
 
+/*The actual floating of titles happens here, again two different sections due to one being bigger than the other*/
 #project-title {
-    position: relative;
-    margin: -1rem 0 1.5rem 0;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--grape);
-    border-radius: 8px;
+    position: absolute;
+    padding: 20px;
     text-decoration: none;
+    background-color: var(--east-side); opacity: 0.7;
 }
 
 #other-project {
-    max-height: 25%;
-    max-width: 25%;
+    max-height: 30%;
+    max-width: 30%;
     padding: 5px;
     border-radius: 8px;
 }
 
 #project-title2 {
-    position: relative;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--grape);
-    border-radius: 8px;
+    position: absolute;
+    margin-top: 2rem;
+    padding: 10px;
     text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--east-side); opacity: 0.7;
 }
 
 #contact {
     float: left;
-    margin: 1.5rem;
+    margin: 1rem;
     font-size: 1.5rem;
 }
 
+/*Mobile first development. I would love to have the work section be rows on larger screens, but that was not working as well. Will be something to come back to at a later time.*/
 @media screen and (min-width: 768px) {
     .container1 {
       flex: 0 0 50%;
@@ -155,5 +197,23 @@ h5 {
     .container2 {
         flex: 0 0 50%;
         max-width: 50%;
+        flex-direction: column;
       }  
+
+      .project {
+        flex: 0 0 50%;
+        max-width: 50%;
+        flex-direction: column;
+      }
     }
+
+    @media screen and (min-width: 992px) {
+        .container2 {
+          flex: 0 0 33.333%;
+          max-width: 33.333%;
+        }
+
+        .project {
+            flex-direction: row;
+          }
+      }
